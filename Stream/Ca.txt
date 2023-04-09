@@ -1,0 +1,36 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Ca{
+    public static void main(String []arg){
+        ArrayList <Faculty> a = new ArrayList<>();
+	    Faculty f1 = new Faculty("f1", "CSE", "LPU", 3 );
+        Faculty f2 = new Faculty("f2", "Mechanical", "LPU", 8 );
+        Faculty f3 = new Faculty("f3", "CSE", "Amity", 6 );
+        Faculty f4 = new Faculty("f4", "IT", "IPU", 2 );
+        Faculty f5 = new Faculty("f5", "CSE", "LPU", 10 );
+
+        a.add(f1);      
+        a.add(f2);        
+        a.add(f3);        
+        a.add(f4);        
+        a.add(f5);
+
+        Stream <Faculty> st = a.stream();
+        st.sorted((a.experience, b.experience) -> b.compareTo(a));
+        st.forEach(f ->
+            System.out.println(f.name)
+        );
+    }
+}
+class Faculty{
+	String name, specialization, univeristy;
+	int experience
+
+	Faculty(String name, String specialization,String univeristy, int experience){
+		this.name = name;
+		this.specialization = specialization;
+		this.univeristy = univeristy;
+		this.experience = experience;
+	}
+}
